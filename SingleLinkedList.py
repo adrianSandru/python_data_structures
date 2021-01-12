@@ -53,3 +53,17 @@ class SingleLinkedList(object):
 
     def get_last_item(self):
         return self.endNode.next
+
+    def get_node_at_index(self, index):
+        """ Return the node from the given index"""
+
+        if index > self.count:
+            return self.startNode
+        else:
+            current_node = self.startNode
+            iteration = 0
+            while iteration != index:
+                current_node = current_node.next
+                iteration = iteration + 1
+                
+            return current_node
